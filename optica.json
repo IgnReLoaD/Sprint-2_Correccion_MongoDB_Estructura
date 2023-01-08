@@ -1,0 +1,63 @@
+db.createCollection("suppliers", 
+{
+    "id_supplier": {$int},
+    "name": "",
+    "phone":"",
+    "fax": "",
+    "nif":"",
+    "address":{
+        "street":"",
+        "number":"",
+        "flat": "",
+        "door":"",
+        "city":"",
+        "zipcode": "",
+        "country":""
+    }
+})
+
+db.createCollection("brands",
+{
+    "id_brand":{$int},
+    "brand_name": "",
+    "social_name": "",
+    "brand_logo": "",
+    "suppliers.id_supplier": ""
+})
+
+db.createCollection("glasses",
+{
+    "id_glass":{$int},
+    "right_grad":"",
+    "left_grad":"",
+    "color_mont":"",
+    "color_glass":"",
+    "price":"",
+    "type":{
+        "flotante":"",
+        "pasta":"",
+        "metalica":""
+    },
+    "suppliers.id_supplier": "",
+    "brand.id_brand":""
+})
+
+db.createCollection("customers",
+{
+    "id_customer":{$int},
+    "name":"",
+    "address":"",
+    "phone":"",
+    "mail":"",
+    "register_date":"",
+    "recommended_id_customer":""
+})
+
+db.createCollection("sales",
+{
+    "id_sale":{$int},
+    "employee":"",
+    "sales_date":"",
+    "glasses.id_glass":"",
+    "customer.id_customer":""
+})
