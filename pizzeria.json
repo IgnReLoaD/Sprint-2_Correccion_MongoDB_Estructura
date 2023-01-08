@@ -32,10 +32,10 @@ db.createCollection("products",
     "id_product":{$int},
     "reference":"",
     "descripcion":"",
-    "price":"",
-    "imagen":"",
+    "price":"",    
     "purchases.id_purchase":"",
-    "customer.id_customer":""
+    "customer.id_customer":"",
+    "image":""
 })
 
 db.createCollection("pizzas",
@@ -47,7 +47,8 @@ db.createCollection("pizzas",
     "category":{
         "id_category":{$int},
         "description":"",
-    }
+    },
+    "image":""
 })
 
 db.createCollection("employees",
