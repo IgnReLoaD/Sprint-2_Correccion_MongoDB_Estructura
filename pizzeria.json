@@ -1,20 +1,27 @@
+
 db.createCollection("customers",
 {
-    "id_customer":{$int},
-    "name":"",
-    "address":{
-        "street":"",
-        "zipcode":"",
-        "city":"",
-        "quarter":""
+    "id_customer" : {$int},
+    "name" : "",
+    "address" : {
+        "street" : "",
+        "zipcode" : "",
+        "city" : "",
+        "quarter" : ""
     },
-    "phone":""
+    "phone" : ""
 })
 
-db.createCollection("purchases",
+db.createCollection("orders_headers",
 {
-    "id_purchase":{},
-    "type":"",
+    "id_order_header":{$int},
+    "type" : {
+        "enum" : [
+           "delivery",
+           "take_away"
+        ]
+    }, 
+    "employees.id_employee": "",
     "price":"",
     "num_products":"",
     "date_time":"",
@@ -22,13 +29,21 @@ db.createCollection("purchases",
     "shops.id_shop":""
 })
 
+db.createCollection("orders_details",
+{
+    "id_order_detail" : {$int},
+    "orders_headers.id_order_header" : "",
+    "product_id" : "", 
+    "quantity" : "", 
+}
+
 db.createCollection("products",
 {
     "id_product":{$int},
     "reference":"",
     "descripcion":"",
     "price":"",    
-    "purchases.id_purchase":"",
+    "orders_headers.id_order_header":"",
     "customer.id_customer":"",
     "image":""
 })
@@ -37,7 +52,7 @@ db.createCollection("pizzas",
 {
     "id_pizza":{$int},
     "products.id_product":"",
-    "purchases.id_purchase":"",
+    "orders_headers.id_order_header":"",
     "customers.id_customer":"",
     "category":{
         "id_category":{$int},
@@ -48,12 +63,12 @@ db.createCollection("pizzas",
 
 db.createCollection("employees",
 {
-    "id_employee":{$int},
-    "name":"",
-    "nif":"",
-    "phone":"",
-    "type":"",
-    "shops.id_shop":""
+    "id_employee" : {$int},
+    "name" : "",
+    "nif" : "",
+    "phone" : "",
+    "type" : "", 
+    "shops.id_shop" : ""
 })
 
 db.createCollection("shops",
