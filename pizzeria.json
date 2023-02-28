@@ -14,12 +14,7 @@ db.createCollection("customers",
 db.createCollection("purchases",
 {
     "id_purchase":{},
-    "type":{
-        "delivery":{        
-            "timestamp":"",
-        },
-        "takeaway":""
-    },
+    "type":"",
     "price":"",
     "num_products":"",
     "date_time":"",
@@ -57,10 +52,7 @@ db.createCollection("employees",
     "name":"",
     "nif":"",
     "phone":"",
-    "type":{
-        "cook":"",
-        "rider":""
-    },
+    "type":"",
     "shops.id_shop":""
 })
 
