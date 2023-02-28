@@ -33,12 +33,7 @@ db.createCollection("glasses",
     "color_mont":"",
     "color_glass":"",
     "price":"",
-    "type":{
-        "flotante":"",
-        "pasta":"",
-        "metalica":""
-    },
-    "suppliers.id_supplier": "",
+    "type":"",
     "brand.id_brand":""
 })
 
