@@ -34,7 +34,6 @@ db.createCollection("glasses",
     "color_glass":"",
     "price":"",
     "type":"",
-    "suppliers.id_supplier": "",
     "brand.id_brand":""
 })
 
